@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <title>LAMBILLIONEA</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+    
+    <!-- JS -->
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/materialize.js"></script>
+    <script>
+        
+        $(document).ready(function(){
+            
+            $('.modal-trigger').leanModal();
+
+            $('#header').load('modals.html');
+            
+        });
+
+    </script>
+    
+<header class="navbar-fixed z-depth-2">    
+    
+    <!-- NAVIGATION -->
+    <nav class="light-green darken-4" role="navigation">
+        <div class="nav-wrapper container">
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="left hide-on-med-and-down">
+                <li><a href="index.html" class="white-text">ACCUEIL</a></li>
+                <li><a href="revue.html" class="white-text">LA REVUE</a></li>
+                <li><a href="articles.html" class="white-text">PUBLIER UN ARTICLE</a></li>
+                <li><a href="evenements.html" class="white-text">événements</a></li>
+            </ul>
+            
+            <ul class="right hide-on-med-and-down">
+                <li class="light-green darken-3"><a href="#modal0" class="modal-trigger white-text"><img src="media/icons/fa-power.png" style="margin-right: 10px">CONNEXION</a></li>
+                <li class="light-green darken-3" style="margin-left: 5px"><a href="mon-panier.html" class="white-text"><img src="media/icons/fa-shopping-cart.png" style="margin-right: 10px">MON PANIER</a></li>
+            </ul>
+
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="index.html">ACCUEIL</a></li>
+                <li><a href="revue.html">LA REVUE</a></li>
+                <li><a href="articles.html">PUBLIER UN ARTICLE</a></li>
+                <li><a href="evenements.html">événements</a></li>
+                <li class="light-green darken-3"><a href="#modal0" class="modal-trigger white-text"><img src="media/icons/fa-power.png" style="margin-right: 10px">CONNEXION</a></li>
+                <li class="light-green darken-3"><a href="mon-panier.html" class="white-text"><img src="media/icons/fa-shopping-cart.png" style="margin-right: 10px">MON PANIER</a></li>
+            </ul>
+
+        </div>
+    </nav>
+    <!-- FIN -->
+    
+</header>
+    
+    <div id="header"></div>
+
+<div class="z-depth-3">
+    <div class="container">
+        <div class="section">
+            <div class="row">
+                <h2 class="josefin-bold">Mon panier</h2>
+                
+                <section class="col s8">
+                    
+                    <div class="card col s12">
+                        <div class="card-image waves-effect waves-block waves-light col s4">
+                            <img class="activator margin-10" src="media/revue-04.jpg">
+                        </div>
+                        <div class="card-content col s8">
+                            <span class="card-title activator grey-text text-darken-4">LAMBILLIONEA</span>
+                            <p>CXV, 115ème année, N°3, Octobre 2015</p>
+                            <span class="card-price grey-text text-lighten-1">50€</span>
+                            <div class="card-action">
+                                <a href="#" class="delete">RETIRER AU PANIER</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card col s12 right">
+                        <div class="card-image waves-effect waves-block waves-light col s4">
+                            <img class="activator margin-10" src="media/revue-06.jpg">
+                        </div>
+                        <div class="card-content col s8">
+                            <span class="card-title activator grey-text text-darken-4">LAMBILLIONEA</span>
+                            <p>CXIV, 114ème année, N° 2, Septembre 2014</p>
+                            <span class="card-price grey-text text-lighten-1">50€</span>
+                            <div class="card-action">
+                                <a href="#" class="delete">RETIRER AU PANIER</a>
+                            </div>
+                        </div>
+                    </div>
+                
+                </section>
+                
+                <aside class="col s4">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title">Sous-total (2articles) :</span>
+                            <span class="prix-panier red-text">100€</span>
+                        </div>
+                        <div class="card-action">
+                            <a href="#modal4" class="modal-trigger">Passez la commande</a>
+                            <a href="#modal0" class="modal-trigger">Connectez-vous</a>
+                        </div>
+                    </div>
+                    
+                </aside>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+  <footer class="page-footer grey darken-3">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Lambillionea asbl</h5>
+                <p class="grey-text text-lighten-4">Fondée en 2010 par Thierry BOUYER, Jacques HECQ et Auguste FRANCOTTE.
+                <br>(anciennement "Société entomologique namuroise" créée à Namur en 1896)
+                <br>Siège : 57, rue GENOT, B - 4032 Chênée, Belgique .
+                <br><br>E-mail : <a href="#">lambillionea@hotmail.com</a></p>
+            </div>
+            <div class="col l3 s12">
+                <h5 class="white-text">Settings</h5>
+                <ul>
+                    <li><a class="white-text" href="#!">Link 1</a></li>
+                    <li><a class="white-text" href="#!">Link 2</a></li>
+                    <li><a class="white-text" href="#!">Link 3</a></li>
+                    <li><a class="white-text" href="#!">Link 4</a></li>
+                </ul>
+            </div>
+            <div class="col l3 s12">
+                <h5 class="white-text">Connect</h5>
+                <ul>
+                    <li><a class="white-text" href="#!">Link 1</a></li>
+                    <li><a class="white-text" href="#!">Link 2</a></li>
+                    <li><a class="white-text" href="#!">Link 3</a></li>
+                    <li><a class="white-text" href="#!">Link 4</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright grey darken-4">
+      <div class="container">
+      Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Olivier Laval</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script>
+        
+        $(document).ready(function(){
+            
+            $('.delete').click(function(){
+                $(this).closest('.card').slideUp('slow');
+                $('.prix-panier').html('50€');
+            });
+
+          
+        });
+
+    </script>
+
+  </body>
+</html>
