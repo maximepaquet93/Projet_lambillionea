@@ -10,7 +10,9 @@ use Validator;
 class EvenementController extends Controller
 {
     public function agenda(){
-        $evenement = Evenement::all();
+
+        $evenement = Evenement::orderBy('date','DESC')->get();
+
         return view('Evenement.agenda',['evenement'=>$evenement]);
     }
     public function adminAccueil(){

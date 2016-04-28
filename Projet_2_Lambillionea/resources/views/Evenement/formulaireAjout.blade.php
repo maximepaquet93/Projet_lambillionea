@@ -1,6 +1,6 @@
 @extends ('../Template.layout')
 
-@section('contenu')
+@section('Contenu')
 
 @if(count($errors)>0)
     <div class="alert alert-danger">
