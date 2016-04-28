@@ -62,4 +62,29 @@ Route::get('/Administration/Accueil', [
 ]);
 
 
+Route::get('/add',[
+    'as'=>'ajouterEvenement',
+    'uses'=>'EvenementController@addEvenement'
+]);
+
+Route::post('/valid',[
+    'as'=>'valid',
+    'uses'=>'EvenementController@validEvenement'
+]);
+
+Route::get('/evenement/supprimer/{id}',[
+    'as'=>'supprimerEvenement',
+    'uses'=>'EvenementController@supprimerEvenement'
+]);
+
+Route::get('/evenement/modifier/{id}',[
+    'as'=>'modifierEvenement',
+    'uses'=>'EvenementController@modifierEvenement'
+]);
+
+Route::post('/update/{id}',[
+    'as'=>'update',
+    'uses'=>'EvenementController@updateEvenement'
+]);
+
 

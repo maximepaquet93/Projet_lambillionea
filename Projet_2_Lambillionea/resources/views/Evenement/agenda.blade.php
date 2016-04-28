@@ -49,9 +49,19 @@
                             <p>{{$event->rue}},{{$event->numero}}, {{$event->codePostal}},{{$event->localite}}</p>
                             <p>Contact Email : <a href="#">{{$event->contact}}</a></p>
                         </td>
+                        <td>
+                            <div>
+                                <a href="{{route('modifierEvenement', ['id'=>$event->id])}}">Modifier</a>
+                            </div>
+                            <div>
+                                 <a href="{{route('supprimerEvenement', ['id'=>$event->id])}}">Supprimer</a>
+                            </div>
+                        </td>
                     </tr>
+                    
                     @endforeach
                 </tbody>
+                 <a class="col s4 btn waves-effect waves-light" href="{{route('ajouterEvenement')}}">Ajouter un evenement</a>
             </table> 
                 
         </div>

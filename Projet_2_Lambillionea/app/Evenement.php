@@ -6,9 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Evenement extends Model
 {
-    protected $table = 'evenement';
+    protected $table = 'evenements';
     
     protected $fillable = [
         'titre','texte', 'date', 'contact', 'rue', 'numero', 'localite', 'codePostal'
     ];
+    public $timestamps = false;
 }
