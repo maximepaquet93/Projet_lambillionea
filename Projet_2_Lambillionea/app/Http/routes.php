@@ -25,7 +25,7 @@ Route::get('/Revue', [
 /*Publier un article*/
 Route::get('/Ajout-article', [
     'as'=>'ajoutArticle',
-    'uses'=>'RevueController@ajouter'
+    'uses'=>'ArticleController@ajouter'
 ]);
 
 /*Les événements*/
@@ -61,27 +61,31 @@ Route::get('/Administration/Accueil', [
     'uses'=>'EvenementController@showLoginForm'
 ]);
 
-
+/*Ajout d'un evenement*/
 Route::get('/add',[
     'as'=>'ajouterEvenement',
     'uses'=>'EvenementController@addEvenement'
 ]);
 
+/*validation de l'ajout d'un evenement*/
 Route::post('/valid',[
     'as'=>'valid',
     'uses'=>'EvenementController@validEvenement'
 ]);
 
+/*Supprimer un evenement*/
 Route::get('/evenement/supprimer/{id}',[
     'as'=>'supprimerEvenement',
     'uses'=>'EvenementController@supprimerEvenement'
 ]);
 
+/*Modifier un evenement, afficher le formulaire*/
 Route::get('/evenement/modifier/{id}',[
     'as'=>'modifierEvenement',
     'uses'=>'EvenementController@modifierEvenement'
 ]);
 
+/*Modifier un evenement, envoie des données*/
 Route::post('/update/{id}',[
     'as'=>'update',
     'uses'=>'EvenementController@updateEvenement'

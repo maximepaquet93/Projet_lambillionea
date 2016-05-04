@@ -5,12 +5,12 @@
                 // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
                 $('.modal-trigger').leanModal();
 
-                $('#header').load('Modals.modals');
+                $('#header').load('modals.html');
             });
 </script>
 @endsection
 @section('Contenu')
-<div id="header"></div>
+<div id="header">
         <div id="index-banner-1" class="parallax-container parallax-index">
           <div class="section no-pad-bot">
             <div class="container">
@@ -29,7 +29,7 @@
           </div>
           <div class="parallax"><img src="{{ asset('media/bg-1.jpg') }}" alt="Unsplashed background img 1"></div>
         </div>
-
+</div>
 <div id="1">
     <div class="container">
         <div class="section">

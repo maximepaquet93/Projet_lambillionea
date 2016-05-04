@@ -124,13 +124,59 @@
                     <div class='col s12'>
                         <a href="#modal2" class="btn btn-large btn-bleu modal-trigger col s8">Proposer un article</a>
                     </div>
-                    <div class='col s12'>
-                        <a href="#modal0" class="btn btn-large btn-bleu modal-trigger col s8">Connectez-vous</a>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<!--======================LES MODALS================================================-->
+<!-- Proposer un article -->
+    <div id="modal2" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <div class="row">
+                <div class="col s12">
+                    <h4 class="josefin-bold">PROPOSER UN ARTICLE</h4>
+                    <p>Vous souhaitez soumettre un article pour une publication au sein de la revue ?
+                       Rien de plus simple, enregistrez le sujet de votre article ainsi que votre nom
+                       et joignez nous votre document au format WORD de préférence ou autre format éditable (.doc, .docx, .odt, .txt).
+                       <br><br>
+                       Au plaisir de vous lire.
+                    </p>
+                </div>
 
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="job" type="text" class="validate">
+                            <label for="job">Sujet de l'article</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="password" type="password" class="validate">
+                            <label for="password">Nom de l'auteur</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="file-field input-field">
+                            <div class="btn btn-bleu">
+                                <span>Votre article</span>
+                                <input type="file">
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+          </div>
+            
+        </div>
+        <div class="modal-footer left">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Je propose</a>
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat left">Retour</a>
+        </div>
+    </div>
+    
+    <!-- FIN -->
 @endsection
