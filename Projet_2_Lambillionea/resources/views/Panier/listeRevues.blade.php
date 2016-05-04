@@ -13,7 +13,7 @@
 </script>
 @endsection
 @section('Contenu')
- <div id="header"></div>
+ <div id="header">
 
 <div class="z-depth-3">
     <div class="container">
@@ -71,6 +71,7 @@
         </div>
     </div>
 </div>
+     </div>
  <!--======================LES MODALS================================================-->
   <!-- POPUP PAIEMENT -->
     <div id="modal4" class="modal modal-fixed-footer">

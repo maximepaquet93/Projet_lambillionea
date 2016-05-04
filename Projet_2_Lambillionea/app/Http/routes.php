@@ -53,12 +53,16 @@ Route::post('/Administration', [
     'as'=>'adminloginCheck',
     'uses'=>'Auth\AuthController@postLogin'
 ]);
-
+/*Déconnexion*/
+Route::get('/Administration/Déconnexion', [
+    'as'=>'adminLogout',
+    'uses'=>'Auth\AuthController@getLogout'
+]);
 
 /*Page d'accueil de la partie admin*/
 Route::get('/Administration/Accueil', [
     'as'=>'adminAccueil',
-    'uses'=>'EvenementController@showLoginForm'
+    'uses'=>'EvenementController@adminAccueil'
 ]);
 
 /*Ajout d'un evenement*/
