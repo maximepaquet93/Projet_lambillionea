@@ -177,7 +177,7 @@ class AuthController extends controller
     {
         Auth::guard($this->getGuard())->logout();
 
-        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/Evenement');
+        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/');
     }
 
     /**

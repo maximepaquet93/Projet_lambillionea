@@ -10,35 +10,44 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-/*Page d'accueil*/
+/*-------------------Page d'acceuil-----------------------------*/
 Route::get('/', [
     'as'=>'accueil',
     'uses'=>'Controller@accueil'
 ]);
 
-/*Les revues*/
+/*-------------------Les revues-----------------------------*/
+/*Affichage des revues*/
 Route::get('/Revue', [
     'as'=>'laRevue',
     'uses'=>'RevueController@liste'
 ]);
 
-/*Publier un article*/
+/*Tri des revues*/
+Route::get('/Revue/tri', [
+    'as'=>'triRevues',
+    'uses'=>'RevueController@listet'
+]);
+
+/*-------------------Les articles-----------------------------*/
 Route::get('/Ajout-article', [
     'as'=>'ajoutArticle',
     'uses'=>'ArticleController@ajouter'
 ]);
 
-/*Les événements*/
+/*-------------------Les événements-----------------------------*/
 Route::get('/Evenement', [
     'as'=>'lesEvenements',
     'uses'=>'EvenementController@agenda'
 ]);
 
-/*le panier*/
+/*-------------------Le panier-----------------------------*/
 Route::get('/Mon-panier', [
     'as'=>'monPanier',
     'uses'=>'PanierController@listeRevues'
 ]);
+
+
 
 //==============================================================
 //============Partie administration=============================
@@ -50,7 +59,7 @@ Route::get('/Administration', [
 ]);
 /*Check de login*/
 Route::post('/Administration', [
-    'as'=>'adminloginCheck',
+    'as'=>'adminLoginCheck',
     'uses'=>'Auth\AuthController@postLogin'
 ]);
 /*Déconnexion*/

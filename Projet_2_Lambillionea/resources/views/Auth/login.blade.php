@@ -19,7 +19,7 @@
                                     </ul>
                             </div>
                     @endif
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('adminloginCheck') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ route('adminLoginCheck') }}">
                         {!! csrf_field() !!}
 
                         <div class="form-group">
