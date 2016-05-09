@@ -11,12 +11,13 @@ class EvenementController extends Controller
 {
     public function agenda(){
 
-        $evenement = Evenement::orderBy('date','DESC')->get();
+        $evenements = Evenement::orderBy('date','DESC')->get();
 
-        return view('Evenement.agenda',['evenement'=>$evenement]);
+        return view('Evenement.agenda',['evenements'=>$evenements]);
     }
     public function adminAccueil(){
-        return view('Evenement.adminAccueil');
+        $evenements = Evenement::orderBy('date','DESC')->get();
+        return view('Evenement.adminAccueil',['evenements'=>$evenements]);
     }
     
      public function addEvenement(){

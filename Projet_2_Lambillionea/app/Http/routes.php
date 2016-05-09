@@ -29,6 +29,12 @@ Route::get('/Revue/tri', [
     'uses'=>'RevueController@listet'
 ]);
 
+/*Les articles d'une revue */
+Route::get('/Revue/{id}', [
+    'as'=>'lesArticlesRevue',
+    'uses'=>'RevueController@listeArticles'
+]);
+
 /*-------------------Les articles-----------------------------*/
 Route::get('/Ajout-article', [
     'as'=>'ajoutArticle',

@@ -2,20 +2,20 @@
 
 @section('Contenu')
 
-@if(count($errors)>0)
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{error}}</li>
-            @endforeach
-        </ul>
-    </div>
-@elseif(session('status'))
-    <h1>{{session('status')}}</h1>
-@endif
+    @if(count($errors)>0)
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{error}}</li>
+                @endforeach
+            </ul>
+        </div>
+    @elseif(session('status'))
+        <h1>{{session('status')}}</h1>
+    @endif
 
-<form action="{{ route('valid')}}" method="post">
-    <fieldset>
+    <form action="{{ route('valid')}}" method="post">
+        <fieldset>
 
             <div class="row center">
                 <div class="col s6">
@@ -28,11 +28,11 @@
                         <label for="rue">Rue</label>
                         <input type="text" id="rue" class="validate"  name="rue" value="{{old('rue')}}"/>
                     </div>
-                    <div class="input-field">    
+                    <div class="input-field">
                         <label for="numero">Numero</label>
                         <input type="text" id="numero" class="validate"  name="numero" value="{{old('numero')}}"/>
                     </div>
-                    <div class="input-field">    
+                    <div class="input-field">
                         <label for="codePostal">Code Postal</label>
                         <input type="text" id="codePostal" class="validate"  name="codePostal" value="{{old('codePostal')}}"/>
                     </div>
@@ -46,7 +46,7 @@
                     <div class="input-field"><label for="contact">Contact</label>
                         <input type="text" id="contact" class="validate"  name="contact" value="{{old('contact')}}"/>
                     </div>
-                    
+
 
 
                     <input type="hidden" name='_token' value="{{ csrf_token()}}"/>
@@ -54,10 +54,10 @@
                     <div>
                         <button class="btn waves-effect waves-light" type="submit" name="action">Valider</button>
                     </div>
+                </div>
+
             </div>
-               
-            </div>
-    </fieldset>
-</form>
+        </fieldset>
+    </form>
 
 @endsection 

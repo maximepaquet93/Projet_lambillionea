@@ -10,13 +10,13 @@ use Validator;
 class RevueController extends Controller
 {
     public function liste(){
-        
-        //On sélectionne tous les articles
-        //paginate(10): pour afficher 10 articles par pages
-        $revues = Revue::orderBy('annee','DESC')->paginate(10);
-
-        return view('Revue.liste',['revues'=>$revues]);
+        $revues = Revue::orderBy('annee', 'DESC')->paginate(10);
+        $articles = Revue::find(1)->articles;
+        return view('Revue.liste', ['revues' => $revues, 'articles'=>$articles]);
     }
+
+
+
     public function listet(Request $request){
         // Contraintes 
         $validator = Validator::make($request->all(),[
@@ -57,6 +57,12 @@ class RevueController extends Controller
         $revues = Revue::where('annee','2010')->paginate(10);
         return view('Revue.liste',['revues'=>$revues]);
         }
+    }
+    public function listeArticles($id){
+        $revue = Revue::find($id);
+        $articles = Revue::find($id)->articles;
+
+        return view('Revue.sommaire', ['revue' => $revue, 'articles' => $articles]);
     }
     
     

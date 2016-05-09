@@ -28,19 +28,19 @@
                 <li><a href="{{route('accueil')}}" class="white-text">ACCUEIL</a></li>
                 <li><a href="{{route('laRevue')}}" class="white-text">LA REVUE</a></li>
                 <li><a href="{{route('ajoutArticle')}}" class="white-text">PUBLIER UN ARTICLE</a></li>
-                <li><a href="{{route('lesEvenements')}}" class="white-text">Ã©vÃ©nements</a></li>
+                <li><a href="{{route('lesEvenements')}}" class="white-text">Evenements</a></li>
             </ul>
             
             <ul class="right hide-on-med-and-down">
-                <li class="light-green darken-3"><a href="#modal0" class="modal-trigger white-text"><img src="{{ ('media/icons/fa-power.png') }}" style="margin-right: 10px">S'abonner</a></li>
-                <li class="light-green darken-3" style="margin-left: 5px"><a href="{{route('monPanier')}}" class="white-text"><img src="{{ ('media/icons/fa-shopping-cart.png') }}" style="margin-right: 10px">MON PANIER</a></li>
+                <li class="light-green darken-3"><a href="#modal0" class="modal-trigger white-text"><img src="{{ asset('media/icons/fa-power.png') }}" style="margin-right: 10px">S'abonner</a></li>
+                <li class="light-green darken-3" style="margin-left: 5px"><a href="{{route('monPanier')}}" class="white-text"><img src="{{ asset('media/icons/fa-shopping-cart.png') }}" style="margin-right: 10px">MON PANIER</a></li>
             </ul>
 
             <ul class="side-nav" id="mobile-demo">
                 <li><a href="{{route('accueil')}}">ACCUEIL</a></li>
                 <li><a href="{{route('laRevue')}}">LA REVUE</a></li>
                 <li><a href="{{route('ajoutArticle')}}">PUBLIER UN ARTICLE</a></li>
-                <li><a href="{{route('lesEvenements')}}">Ã©vÃ©nements</a></li>
+                <li><a href="{{route('lesEvenements')}}">Evenements</a></li>
                 <li class="light-green darken-3"><a href="#modal0" class="modal-trigger white-text"><img src="{{ ('media/icons/fa-power.png') }}" style="margin-right: 10px">S'abonner</a></li>
                 <li class="light-green darken-3"><a href="{{route('monPanier')}}" class="white-text"><img src="{{ ('media/icons/fa-shopping-cart.png') }}" style="margin-right: 10px">MON PANIER</a></li>
             </ul>
