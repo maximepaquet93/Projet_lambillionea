@@ -17,7 +17,7 @@
         <div class="container">
             <div class="section">
                 <a href="{{route('adminLogout')}}" class="clo s4 btn light-green">Déconnexion</a>
-                <p>Salut mon gros lardon, tu es bien connecté :)</p>
+           
                 <h2 class="josefin-bold">Evénements à venir</h2>
                 <table class="striped">
                     <thead>

@@ -42,7 +42,7 @@ class EvenementController extends Controller
         Evenement::create($parameters);
         
         // On redirige vers la page d'accueil et on envoie un message flash de confirmation
-        return redirect()->route('lesEvenements')->with(['status'=>'Evenement enregistré !']);
+        return redirect()->route('adminAccueil')->with(['status'=>'Evenement enregistré !']);
     }
     
     public function supprimerEvenement($id){
@@ -54,7 +54,7 @@ class EvenementController extends Controller
             $evenement->delete();
         }
         
-       return redirect()->route('lesEvenements');
+       return redirect()->route('adminAccueil');
     }
     
     public function modifierEvenement($id){
@@ -75,6 +75,6 @@ class EvenementController extends Controller
 
         $evenement->fill($input)->save();
         
-        return redirect()->route('lesEvenements');
+        return redirect()->route('adminAccueil');
     }
 }

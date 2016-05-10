@@ -28,7 +28,7 @@
                                     <p>Tome:{{$revue->tome}}, Fascicule:{{$revue->fascicule}}, {{ $revue->annee }}</p>
                                     <span class="card-price grey-text text-lighten-1">50€</span>
                                     <div class="card-action">
-                                        <a href="#">AJOUTER AU PANIER</a>
+                                        <a href="{{route('ajoutPanier', ['id'=>$revue->id])}}">AJOUTER AU PANIER</a>
                                         <a class="modal-trigger right" href="{{route('lesArticlesRevue', ['id' => $revue->id])}}" >EN SAVOIR +</a>
 
                                     </div>

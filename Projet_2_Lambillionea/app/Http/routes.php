@@ -53,6 +53,18 @@ Route::get('/Mon-panier', [
     'uses'=>'PanierController@listeRevues'
 ]);
 
+/*Ajout d'une revue dans le panier*/
+Route::get('/Mon-panier/add/{id}',[
+    'as'=>'ajoutPanier',
+    'uses'=>'PanierController@addRevue'
+]);
+
+/*Suppression d'une revue du panier*/
+Route::get('/Mon-panier/del/{id}',[
+    'as'=>'suppRevuePanier',
+    'uses'=>'PanierController@suppRevue'
+]);
+
 
 
 //==============================================================
