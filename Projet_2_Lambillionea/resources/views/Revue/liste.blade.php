@@ -21,7 +21,7 @@
                         @foreach($revues as $revue)
                             <div class="card col s12">
                                 <div class="card-image waves-effect waves-block waves-light col s4">
-                                    <img class="activator margin-10" src="media/revue-01.jpg">
+                                    <img class="activator margin-10" src="{{ asset('media/revue-01.jpg') }}">
                                 </div>
                                 <div class="card-content col s8">
                                     <span class="card-title activator grey-text text-darken-4">LAMBILLIONEA</span>
