@@ -35,7 +35,7 @@
                                         <p>Tome : {{$revue->tome}}, Fascicule: {{$revue->fascicule}}, {{$revue->annee}}</p>
                                         <span class="card-price grey-text text-lighten-1">50€</span>
                                         <div class="card-action">
-                                            <a href="{{route('suppRevuePanier', ['id'=>$revue->id])}}" class="delete">RETIRER DU PANIER</a>
+                                            <a href="{{route('suppRevuePanier', ['id'=>$revuePan->id])}}" class="delete">RETIRER DU PANIER</a>
                                         </div>
                                     </div>
                                 </div>

@@ -23,7 +23,7 @@ class PanierController extends Controller
     }
 
     public function suppRevue($id){
-        Panier::where('revueID','=',$id)->delete();
+        Panier::where('id','=',$id)->delete();
         return redirect()->route('monPanier');
     }
 }
