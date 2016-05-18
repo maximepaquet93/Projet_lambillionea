@@ -64,8 +64,17 @@ Route::get('/Mon-panier/del/{id}',[
     'as'=>'suppRevuePanier',
     'uses'=>'PanierController@suppRevue'
 ]);
-
-
+/*-------------------Abonnement-----------------------------*/
+/*Affiche le formulaire de contact*/
+Route::get('/Abonnement',[
+    'as'=>'abonnement',
+    'uses'=>'AbonnementController@formulaireAbo'
+]);
+/*Confirmation d'envoi*/
+Route::post('/Abonnement/Confirmation',[
+    'as'=>'abonnementConfirm',
+    'uses'=>'AbonnementController@formulairePost'
+]);
 
 //==============================================================
 //============Partie administration=============================

@@ -32,7 +32,7 @@
             </ul>
             
             <ul class="right hide-on-med-and-down">
-                <li class="light-green darken-3"><a href="#modal0" class="modal-trigger white-text"><img src="{{ asset('media/icons/fa-power.png') }}" style="margin-right: 10px">S'abonner</a></li>
+                <li class="light-green darken-3"><a href="{{route('abonnement')}}" class="modal-trigger white-text"><img src="{{ asset('media/icons/fa-power.png') }}" style="margin-right: 10px">S'abonner</a></li>
                 <li class="light-green darken-3" style="margin-left: 5px"><a href="{{route('monPanier')}}" class="white-text"><img src="{{ asset('media/icons/fa-shopping-cart.png') }}" style="margin-right: 10px">MON PANIER</a></li>
             </ul>
 
