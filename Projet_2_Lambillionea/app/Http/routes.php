@@ -71,7 +71,11 @@ Route::post('/Abonnement/Confirmation',[
     'as'=>'abonnementConfirm',
     'uses'=>'AbonnementController@formulairePost'
 ]);
-
+/*-------------------Recherche-----------------------------*/
+Route::get('/Revue-search',[
+    'as'=>'search',
+    'uses'=>'ArticleController@search'
+]);
 //==============================================================
 //============Partie administration=============================
 //==============================================================

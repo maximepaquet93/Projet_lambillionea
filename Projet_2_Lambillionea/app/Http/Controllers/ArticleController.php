@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Article;
 
+use Illuminate\Pagination\Paginator;
+
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -20,5 +22,22 @@ class ArticleController extends Controller
      */
     public function ajouter(){
         return view('Article.ajouter');
+    }
+    
+    public function search(Request $request){
+        
+        $q = $request->input('search');
+
+        $searchTerms = explode(' ', $q);
+
+        foreach($searchTerms as $term)
+        {
+            $results = Article::where('TITRE', 'LIKE', '%'. $term .'%')->paginate(5);
+            $results= TAG::where('TITRE', 'LIKE', '%'. $term .'%')->paginate(5);
+        }
+        
+        
+            return view('Revue.liste',['results'=>$results]);
+        
     }
 }

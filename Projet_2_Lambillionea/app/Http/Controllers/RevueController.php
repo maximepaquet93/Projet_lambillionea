@@ -12,10 +12,10 @@ class RevueController extends Controller
 {
     public function liste(){
         $revues = Revue::orderBy('annee', 'DESC')->paginate(10);
-
-
         return view('Revue.liste', ['revues' => $revues]);
     }
+    
+    
 
 
 

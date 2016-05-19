@@ -18,52 +18,65 @@
                     <h2 class="josefin-bold">La revue</h2>
                     <section class="col s8">
                         <!--Début de la boucle pour afficher les revues-->
-                        @foreach($revues as $revue)
-                            <div class="card col s12">
-                                <div class="card-image waves-effect waves-block waves-light col s4">
-                                    <img class="activator margin-10" src="{{ asset('media/revue-01.jpg') }}">
-                                </div>
-
-                                <div class="card-content col s8">
-                                    <span class="card-title activator grey-text text-darken-4">LAMBILLIONEA</span>
-                                    <p>Tome:{{$revue->tome}}, Fascicule:{{$revue->fascicule}}, {{ $revue->annee }}</p>
-                                    <p>
-                                    Liste des tags :
-                                        @foreach($revue->articles as $article)
-                                            @foreach($article->tags as $tag)
-                                                @foreach($article->tags as $tagExist)
-                                                    @if($tag->nom != $tagExist->nom)
-                                                        <a></a>
-                                                    @else
-                                                        <a>{{$tag->nom}}</a>
-                                                    @endif
-                                                @endforeach
-                                            @endforeach
-                                        @endforeach
-                                    </p>
-                                    <span class="card-price grey-text text-lighten-1">50€</span>
-
-                                    <div class="card-action">
-                                        <a href="{{route('ajoutPanier', ['id'=>$revue->id])}}">AJOUTER AU PANIER</a>
-                                        <a class="modal-trigger right" href="#revue{{$revue->id}}" >EN SAVOIR +</a>
-
+                        @if(!empty($results)) 
+                           
+                            @foreach($results as $result)
+                                <div class="card col s12">                                 
+                                    <div class="card-content col s8">
+                                        <p class="card-title">Titre : {{ $result->TITRE }}</p><br/>
+                                        <p class="card-title">Auteur : {{ $result->AUTEUR }}</p><br/>
+                                        <p class="card-title">Pays : {{ $result->PAYS }}</p><br/>
+                                        <p class="card-title">Pays : {{ $result->ANNEE }}</p><br/>
+                                        <p class="card-title">Numero de page : {{ $result->PAGE }}</p><br/>
+                                        <P class="card-title">Fascicule : {{ $result->FASC }}</p><br/>
+                                        <P class="card-title">Tome : {{ $result->TOME }}</p><br/>
+ 
                                     </div>
                                 </div>
-                            </div>
-
-                                    <!--Fin de la boucle-->
-                        @endforeach
+                            <!--Fin de la boucle-->                        
+                            @endforeach  
                             <!--Pagination-->
-                            <?php echo $revues->render(); ?>
-                    </section>
-
-
-                            <!-- Modal Structure -->
+                            <?php echo $results->render(); ?>
+                        @else
+                            @foreach($revues as $revue)
+                                <div class="card col s12">
+                                    <div class="card-image waves-effect waves-block waves-light col s4">
+                                        <img class="activator margin-10" src="{{ asset('media/revue-01.jpg') }}">
+                                    </div>
+                                    <div class="card-content col s8">
+                                        <span class="card-title activator grey-text text-darken-4">LAMBILLIONEA</span>
+                                        <p>Tome:{{$revue->tome}}, Fascicule:{{$revue->fascicule}}, {{ $revue->annee }}</p>
+                                        <p>
+                                        Liste des tags :
+                                            @foreach($revue->articles as $article)
+                                                @foreach($article->tags as $tag)
+                                                    @foreach($article->tags as $tagExist)
+                                                        @if($tag->nom != $tagExist->nom)
+                                                            <a></a>
+                                                        @else
+                                                            <a>{{$tag->nom}}</a>
+                                                        @endif
+                                                    @endforeach
+                                                @endforeach
+                                            @endforeach
+                                        </p>
+                                        <span class="card-price grey-text text-lighten-1">50€</span>
+                                        <div class="card-action">
+                                            <a href="{{route('ajoutPanier', ['id'=>$revue->id])}}">AJOUTER AU PANIER</a>
+                                            <a class="modal-trigger right" href="#revue{{$revue->id}}" >EN SAVOIR +</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            <!--Fin de la boucle-->
+                            @endforeach
+                        
+                        <!--Pagination-->
+                        <?php echo $revues->render(); ?>
+                    
+                    <!-- Modal Structure -->                 
                     @foreach($revues as $revue)
                     <div id="revue{{$revue->id}}" class="modal bottom-sheet">
                         <div class="modal-content">
-
-
                             <span class="card-title col s9 offset-s3 grey-text text-darken-4">SOMMAIRE :{{$revue->fascicule}} , février {{$revue->annee}} <i class="modal-action modal-close material-icons right">close</i></span>
                             <div class="border-right col s3 center">
                                 <div class="col s12">
@@ -77,38 +90,31 @@
                                     <div>
                                         <a href="{{route('ajoutPanier', ['id'=>$revue->id])}}">AJOUTER AU PANIER</a>
                                     </div>
-
                                 </div>
                             </div>
-
-
                             <div class="col s9">
-                                <p>
-                                    @foreach($revue->articles as $article)
-                                        <br>{{$article->AUTEUR2}}, {{ $article->TITRE }} : {{$article->PAGE}}
+                            <p>
+                                @foreach($revue->articles as $article)
+                                    <br>{{$article->AUTEUR2}}, {{ $article->TITRE }} : {{$article->PAGE}}
 
-                                    @endforeach
-                                </p>
-
-
+                                @endforeach
+                            </p>
                             </div>
-
-
                         </div>
-
                     </div>
-
-
                     @endforeach
+                    @endif
+                    </section>
                     <!--Menu des options de tri des articles-->
                     <aside class="col s4">
                         <nav>
                             <div class="nav-wrapper">
-                                <form>
+                                <form method="get" action="{{route('search')}}">
                                     <div class="input-field white">
-                                        <input id="search" type="search" placeholder="Recherchez" required>
-                                        <label for="search"><i class="material-icons grey-text text-darken-3">search</i></label>
+                                            <input id="search" type="search" placeholder="Recherchez" required name="search" >
+                                            <label for="search"><i class="material-icons grey-text text-darken-3">search</i></label>
                                         <i class="material-icons">close</i>
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                                     </div>
                                 </form>
                             </div>
