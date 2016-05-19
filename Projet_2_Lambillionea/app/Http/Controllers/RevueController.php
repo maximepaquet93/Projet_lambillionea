@@ -12,8 +12,9 @@ class RevueController extends Controller
 {
     public function liste(){
         $revues = Revue::orderBy('annee', 'DESC')->paginate(10);
-        $articles = Revue::find(1)->articles;
-        return view('Revue.liste', ['revues' => $revues, 'articles'=>$articles]);
+
+
+        return view('Revue.liste', ['revues' => $revues]);
     }
 
 
@@ -59,13 +60,7 @@ class RevueController extends Controller
         return view('Revue.liste',['revues'=>$revues]);
         }
     }
-    public function listeArticles($id){
-        $revue = Revue::find($id);
-        $articles = Revue::find($id)->articles;
 
-        return view('Revue.sommaire', ['revue' => $revue, 'articles' => $articles]);
-    }
-    
     
      
 }

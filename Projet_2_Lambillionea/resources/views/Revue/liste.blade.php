@@ -23,23 +23,83 @@
                                 <div class="card-image waves-effect waves-block waves-light col s4">
                                     <img class="activator margin-10" src="{{ asset('media/revue-01.jpg') }}">
                                 </div>
+
                                 <div class="card-content col s8">
                                     <span class="card-title activator grey-text text-darken-4">LAMBILLIONEA</span>
                                     <p>Tome:{{$revue->tome}}, Fascicule:{{$revue->fascicule}}, {{ $revue->annee }}</p>
+                                    <p>
+                                    Liste des tags :
+                                        @foreach($revue->articles as $article)
+                                            @foreach($article->tags as $tag)
+                                                @foreach($article->tags as $tagExist)
+                                                    @if($tag->nom != $tagExist->nom)
+                                                        <a></a>
+                                                    @else
+                                                        <a>{{$tag->nom}}</a>
+                                                    @endif
+                                                @endforeach
+                                            @endforeach
+                                        @endforeach
+                                    </p>
                                     <span class="card-price grey-text text-lighten-1">50€</span>
+
                                     <div class="card-action">
                                         <a href="{{route('ajoutPanier', ['id'=>$revue->id])}}">AJOUTER AU PANIER</a>
-                                        <a class="modal-trigger right" href="{{route('lesArticlesRevue', ['id' => $revue->id])}}" >EN SAVOIR +</a>
+                                        <a class="modal-trigger right" href="#revue{{$revue->id}}" >EN SAVOIR +</a>
 
                                     </div>
                                 </div>
                             </div>
-                            @endforeach
-                                    <!--Fin de la boucle-->
 
+                                    <!--Fin de la boucle-->
+                        @endforeach
                             <!--Pagination-->
                             <?php echo $revues->render(); ?>
                     </section>
+
+
+                            <!-- Modal Structure -->
+                    @foreach($revues as $revue)
+                    <div id="revue{{$revue->id}}" class="modal bottom-sheet">
+                        <div class="modal-content">
+
+
+                            <span class="card-title col s9 offset-s3 grey-text text-darken-4">SOMMAIRE :{{$revue->fascicule}} , février {{$revue->annee}} <i class="modal-action modal-close material-icons right">close</i></span>
+                            <div class="border-right col s3 center">
+                                <div class="col s12">
+                                    <img src="{{ asset('media/revue-01.jpg') }}" alt="couverture" >
+                                </div>
+                                <div class="col s12">
+                                    <h5 class="grey-text text-darken-4">LAMBILLIONEA</h5>
+                                    <p>Tome : {{ $revue->tome}}, Fascicule : {{ $revue->fascicule }}, Annee : {{ $revue->annee}}</p>
+
+                                    <span class="card-price grey-text text-lighten-1">50€</span>
+                                    <div>
+                                        <a href="{{route('ajoutPanier', ['id'=>$revue->id])}}">AJOUTER AU PANIER</a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="col s9">
+                                <p>
+                                    @foreach($revue->articles as $article)
+                                        <br>{{$article->AUTEUR2}}, {{ $article->TITRE }} : {{$article->PAGE}}
+
+                                    @endforeach
+                                </p>
+
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+                    @endforeach
                     <!--Menu des options de tri des articles-->
                     <aside class="col s4">
                         <nav>
@@ -87,25 +147,7 @@
                         </form>
                     </aside>
 
-                    <!-- Modal Structure -->
-                    <div id="revue01" class="modal bottom-sheet">
-                        <div class="modal-content">
-                            <span class="card-title col s9 offset-s3 grey-text text-darken-4">SOMMAIRE : N°1, février 2016<i class="modal-action modal-close material-icons right">close</i></span>
-                            <div class="border-right col s3 center">
-                                <div class="col s12">
-                                    <img src="media/revue-01.jpg" alt="couverture" >
-                                </div>
-                                <div class="col s12">
-                                    <h5 class="grey-text text-darken-4">LAMBILLIONEA</h5>
-                                    <p>CXVI, 116ème année, N°1, février 2016</p>
-                                    <span class="card-price grey-text text-lighten-1">50€</span>
-                                    <div>
-                                        <a href="#">AJOUTER AU PANIER</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>

@@ -16,6 +16,14 @@
     <script type="text/javascript" src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/materialize.js') }}"></script>
     <!--JAVASCRIPT-->
+    <script>
+
+        $(document).ready(function(){
+            // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+            $('.modal-trigger').leanModal();
+            $('#header').load('modals.html');
+        });
+    </script>
     @yield('javascript')
     <div class="bg-grass">
 <header class="navbar-fixed z-depth-2">    
