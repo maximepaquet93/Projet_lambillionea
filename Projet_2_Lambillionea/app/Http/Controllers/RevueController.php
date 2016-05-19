@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Revue;
+use App\Article;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use App\Http\Requests;

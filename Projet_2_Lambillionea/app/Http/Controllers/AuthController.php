@@ -7,7 +7,10 @@ use App\Http\Controllers;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Lang;
-
+/**
+ * Controleur d'authentifiation
+ *
+ */
 class AuthController extends controller
 {
     use RedirectsUsers;

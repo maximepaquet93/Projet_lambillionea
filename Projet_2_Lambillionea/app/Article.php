@@ -8,8 +8,8 @@ class Article extends Model
 {
     protected $table = 'articles';
 
-    public function revues()
+    public function tags()
     {
-        return $this->belongsToMany('App\Models\Revue');
+        return $this->belongsToMany('App\Tag');
     }
 }
