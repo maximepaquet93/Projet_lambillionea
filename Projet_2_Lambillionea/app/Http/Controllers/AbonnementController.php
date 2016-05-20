@@ -27,24 +27,31 @@ class AbonnementController extends Controller
     public function formulairePost(Request $request){
         // Contraintes 
         $validator = Validator::make($request->all(),[
-            'nom'=>'required|min:2|max:20',
+            'nom'=>'required|min:2|max:40',
+
  
         ]);
-        //si l'une des contraintes n'est pas respectée, on redirige vers la page du formulaire et on retourne les erreurs
+        //si l'une des contraintes n'est pas respectÃ©e, on redirige vers la page du formulaire et on retourne les erreurs
         if($validator->fails()){
             return redirect('/Abonnement')->withErrors($validator)->withInput();
         }
-
+        
+        $nom=$request->input('nom');
+        $prenom=$request->input('prenom');
+        $email=$request->input('email');
+        $localite=$request->input('localite');
+        $rueNum=$request->input('rueNum');
+        $codePostale=$request->input('codePostale');
 
         /**
          * La demande d'abonnement se fait via un envoi de mail
          * 
          */
-        Mail::send('Abonnement.formulaireAbo', $request->all(), function($message) 
+        Mail::send('Email.emailAbo',['nom'=>$nom, 'prenom'=>$prenom, 'email'=>$email, 'localite'=>$localite, 'rueNum'=>$rueNum, 'codePostale'=>$codePostale] , function($message) 
         {
                 $message->to('paquet.maxi@gmail.com')->subject("Demande d'abonnement");
         });
-        return view("confirmation");
+        return view("Abonnement.confirmation");
 
         
     }
