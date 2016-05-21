@@ -39,7 +39,7 @@ class AuthController extends controller
             return view($view);
         }
 
-        return view('auth.login');
+        return view('Auth.login');
     }
 
     /**

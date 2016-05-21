@@ -35,19 +35,19 @@
             <ul class="left hide-on-med-and-down">
                 <li><a href="{{route('accueil')}}" class="white-text">ACCUEIL</a></li>
                 <li><a href="{{route('laRevue')}}" class="white-text">LA REVUE</a></li>
-                <li><a href="{{route('ajoutArticle')}}" class="white-text">PUBLIER UN ARTICLE</a></li>
+                <li><a href="{{route('formulaire')}}" class="white-text">PUBLIER UN ARTICLE</a></li>
                 <li><a href="{{route('lesEvenements')}}" class="white-text">Evenements</a></li>
             </ul>
             
             <ul class="right hide-on-med-and-down">
-                <li class="light-green darken-3"><a href="{{route('abonnement')}}" class="modal-trigger white-text"><img src="{{ asset('media/icons/fa-power.png') }}" style="margin-right: 10px">S'abonner</a></li>
+                <li class="light-green darken-3"><a href="#modal0" class="modal-trigger white-text"><img src="{{ asset('media/icons/fa-power.png') }}" style="margin-right: 10px">S'abonner</a></li>
                 <li class="light-green darken-3" style="margin-left: 5px"><a href="{{route('monPanier')}}" class="white-text"><img src="{{ asset('media/icons/fa-shopping-cart.png') }}" style="margin-right: 10px">MON PANIER</a></li>
             </ul>
 
             <ul class="side-nav" id="mobile-demo">
                 <li><a href="{{route('accueil')}}">ACCUEIL</a></li>
                 <li><a href="{{route('laRevue')}}">LA REVUE</a></li>
-                <li><a href="{{route('ajoutArticle')}}">PUBLIER UN ARTICLE</a></li>
+                <li><a href="{{route('formulaire')}}">PUBLIER UN ARTICLE</a></li>
                 <li><a href="{{route('lesEvenements')}}">Evenements</a></li>
                 <li class="light-green darken-3"><a href="#modal0" class="modal-trigger white-text"><img src="{{ ('media/icons/fa-power.png') }}" style="margin-right: 10px">S'abonner</a></li>
                 <li class="light-green darken-3"><a href="{{route('monPanier')}}" class="white-text"><img src="{{ ('media/icons/fa-shopping-cart.png') }}" style="margin-right: 10px">MON PANIER</a></li>
@@ -106,33 +106,56 @@
    <!-- POPUP CONNEXION -->
 
     <div id="modal0" class="modal modal-fixed-footer">
-        <div class="modal-content center">
+        <div class="modal-content">
             <div class="row">
-                <div class="col s12">
-                    <h4 class="josefin-bold">CONNEXION</h4>
-                    <p>Vous êtes déjà membre adhérent de Lambillionea?<br>Connectez vous sans plus attendre.</p>
-                    <form>
-                        <div class="row">
-                        <div class="input-field">
-                            <input id="job" type="text" class="validate">
-                            <label for="job">Votre pseudo</label>
-                        </div>
+                <form class="form-horizontal" role="form" method="POST" action="{{ route('abonnementConfirm') }}">                    
+                    <div class="row col s12">
+                            <label class="col-md-4 control-label">Nom</label>
+                            <div class="col-md-6">
+                                    <input type="text" class="form-control" name="nom" >
+                            </div>
                     </div>
-                        <div class="row">
-                        <div class="input-field">
-                            <input id="password" type="password" class="validate">
-                            <label for="password">Votre mot de passe</label>
-                        </div>
+
+                    <div class="row col s12">
+                            <label class="col-md-4 control-label">Prénom</label>
+                            <div class="col-md-6">
+                                    <input type="text" class="form-control" name="prenom">
+                            </div>
                     </div>
-                    </form>
-                    <p>Vous n'êtes pas encore membre adhérent ?<a href='#modal1' class='modal-trigger bleu'> INSCRIVEZ-VOUS</a></p>
-                </div>
-          </div>
-            
-        </div>
-        <div class="modal-footer left">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Envoyez</a>
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat left">Retour</a>
+                    <div class="row col s12">
+                            <label class="col-md-4 control-label">Email</label>
+                            <div class="col-md-6">
+                                    <input type="email" class="form-control" name="email">
+                            </div>
+                    </div>
+                    <div class="row col s12">
+                            <label class="col-md-4 control-label">Localité</label>
+                            <div class="col-md-6">
+                                    <input type="text" class="form-control" name="localite">
+                            </div>
+                    </div>
+                    <div class="row col s12">
+                            <label class="col-md-4 control-label">Rue, numéro</label>
+                            <div class="col-md-6">
+                                    <input type="text" class="form-control" name="rueNum">
+                            </div>
+                    </div>
+                    <div class="row col s12">
+                            <label class="col-md-4 control-label">Code postale</label>
+                            <div class="col-md-6">
+                                    <input type="text" class="form-control" name="codePostale">
+                            </div>
+                    </div>
+
+                    <input type="hidden" name='_token' value="{{ csrf_token()}}"/>
+
+                    <div class="row col s12">
+                            <div class="col-md-6 col-md-offset-4">
+                                    <button type="submit" class="btn btn-primary">Envoyer</button>         
+                            </div>
+                    </div>                                      
+                </form>
+            </div>
         </div>
     </div>
 

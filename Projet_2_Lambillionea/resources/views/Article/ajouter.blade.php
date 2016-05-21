@@ -144,37 +144,35 @@
                     </p>
                 </div>
 
-                <form class="col s12">
+                <form action='{{route('ajoutArticle')}}' method='post' class="col s12">
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="job" type="text" class="validate">
-                            <label for="job">Sujet de l'article</label>
+                            <input id="sujet" type="text"  name='sujet'>
+                            <label for="sujet">Sujet de l'article</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="password" type="password" class="validate">
-                            <label for="password">Nom de l'auteur</label>
+                            <input id="nomAuteur" type="text"  name='nomAuteur'>
+                            <label for="nomAuteur">Nom de l'auteur</label>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="file-field input-field">
-                            <div class="btn btn-bleu">
-                                <span>Votre article</span>
-                                <input type="file">
-                            </div>
-                            <div class="file-path-wrapper">
-                                <input class="file-path validate" type="text">
-                            </div>
+                        <div class="col s12 input-field">
+                            <div class="">
+                                <input id="fichier" type="text"  name='fichier'>
+                            <label for="fichier">Fichier</label>
+                            </div>                          
                         </div>
                     </div>
+                    <div class="row">
+                        <div class='col-md-6 col-md-offset-4'>
+                            <button type='submit' class='btn btn-primary'>Je propose </button>
+                        </div>
+                    </div>
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}" </>
                 </form>
-          </div>
-            
-        </div>
-        <div class="modal-footer left">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Je propose</a>
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat left">Retour</a>
+          </div>      
         </div>
     </div>
     

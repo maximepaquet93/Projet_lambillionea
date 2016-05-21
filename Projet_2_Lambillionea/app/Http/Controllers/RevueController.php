@@ -16,9 +16,6 @@ class RevueController extends Controller
     }
     
     
-
-
-
     public function listet(Request $request){
         // Contraintes 
         $validator = Validator::make($request->all(),[

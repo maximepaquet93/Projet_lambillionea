@@ -33,9 +33,15 @@ Route::get('/Revue/tri', [
 
 /*-------------------Les articles-----------------------------*/
 Route::get('/Ajout-article', [
-    'as'=>'ajoutArticle',
+    'as'=>'formulaire',
     'uses'=>'ArticleController@ajouter'
 ]);
+/*Envoie du formulaire*/
+Route::post('/Ajout-article/Traitement', [
+    'as'=>'ajoutArticle',
+    'uses'=>'ArticleController@envoieArticle'
+]);
+
 
 /*-------------------Les événements-----------------------------*/
 Route::get('/Evenement', [

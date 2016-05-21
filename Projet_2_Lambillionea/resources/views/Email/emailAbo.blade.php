@@ -7,7 +7,7 @@
     </head>
     <body>
         <h4>Demande d'abonnement</h4>
-        <H5>{{$prenom}} {{$nom}} souhaite intégrer l'asbl</H5>
+        <H5>{{$prenom}} {{$nom}} souhaite intégrer s'abonner</H5>
         <p> {{$nom}}</p><br/>
         <p>{{$prenom}}</p><br/>
         <p>{{$email}}</p><br/>
