@@ -25,7 +25,7 @@
 
                     @foreach($panier as $revuePan)
                         @foreach($revues as $revue)
-                            @if($revuePan->revueID === $revue->id)
+                            @if($revuePan->revue_id === $revue->id)
                                 <div class="card col s12">
                                     <div class="card-image waves-effect waves-block waves-light col s4">
                                         <img class="activator margin-10" src="{{ asset('media/revue-04.jpg') }}">

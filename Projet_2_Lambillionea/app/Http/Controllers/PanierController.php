@@ -18,7 +18,7 @@ class PanierController extends Controller
     }
 
     public function addRevue($id){
-        Panier::insert(['revueID' => $id]);
+        Panier::insert(['revue_id' => $id]);
         return redirect()->route('monPanier');
     }
 

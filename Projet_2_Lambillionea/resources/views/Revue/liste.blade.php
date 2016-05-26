@@ -95,7 +95,7 @@
                             <div class="col s9">
                             <p>
                                 @foreach($revue->articles as $article)
-                                    <br>{{$article->AUTEUR2}}, {{ $article->TITRE }} : {{$article->PAGE}}
+                                    <br>{{$article->auteur}}, {{ $article->titre }} : {{$article->pages}}
 
                                 @endforeach
                             </p>
